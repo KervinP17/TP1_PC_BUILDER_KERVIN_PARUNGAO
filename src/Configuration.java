@@ -26,16 +26,15 @@ public class Configuration {
         for (Composant comp : composants) {
             total += comp.getPrix();
         }
-
         total =+ taxe;
 
         return total;
     }
 
     public Composant rechercher(String categorie) {
-        for (Composant comp : composants) {
-            if ( comp.equals(categorie) ) {
-                return comp;
+        for ( int i = 0; i < nbComposants; i++) {
+            if ( composants[i].getCategorie().toLowerCase().equals(categorie) ) {
+                return composants[i];
             }
         }
 
@@ -43,13 +42,11 @@ public class Configuration {
     }
 
     public boolean ajouter(Composant composant) {
-
-        if ( composant == null ) {
-            return true;
+        if (calculerTotal(0) + composant.getPrix() > maxPrix || rechercher(composant.getCategorie()) != null || nbComposants >= MAX_COMPOSANT) {
+            return false;
         }
-
-
-        return false;
+        composants[nbComposants++] = composant;
+        return true;
     }
 
     public boolean retirer(Composant composant) {
