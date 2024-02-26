@@ -21,27 +21,7 @@ public class Composant {
 
     // not really good
     public boolean estIdentique(Composant autre) {
-        boolean identique = false;
-        for (int i = 0; i < 3; i++) {
-            switch (i) {
-                case 0:
-                    if (this.categorie == categorie) {
-                        identique = true;
-                    }
-                    break;
-                case 1:
-                    if (this.marque == marque) {
-                        identique = true;
-                    }
-                    break;
-                case 2:
-                    if (this.nom == nom) {
-                        identique = true;
-                    }
-                    break;
-            }
-        }
-        return identique;
+        return this.categorie.equals(autre.categorie) && this.marque.equals(autre.marque) && this.nom.equals(autre.nom);
     }
 
 

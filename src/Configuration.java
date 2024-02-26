@@ -23,8 +23,8 @@ public class Configuration {
     public double calculerTotal(double taxe) {
         double total = 0.0;
 
-        for (Composant comp : composants) {
-            total += comp.getPrix();
+        for (int i = 0; i < nbComposants; i++) {
+            total += composants[i].getPrix();
         }
         total =+ taxe;
 
