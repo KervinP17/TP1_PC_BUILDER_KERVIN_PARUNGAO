@@ -1,28 +1,30 @@
 public class Configuration {
     String description;
     double maxPrix;
-    Composant[] composants = new Composant[4];
+    Composant[] composants;
     int nbComposants;
     final int MAX_COMPOSANT = 20;
 
-    public Configuration(String description, double maxPrix, Composant[] composant) {
+    public Configuration(String description, double maxPrix, Composant[] composants) {
         this.description = description;
         this.maxPrix = maxPrix;
-        this.composants = composant;
+        this.composants = new Composant[MAX_COMPOSANT];
+        this.nbComposants = composants.length;
     }
 
     public Configuration(Configuration originale) {
         this.description = originale.description;
         this.maxPrix = originale.maxPrix;
         this.composants = originale.composants;
+        this.nbComposants = originale.nbComposants;
     }
 
 
     public double calculerTotal(double taxe) {
         double total = 0.0;
 
-        for (int i = 0; i < 4; i++) {
-            total += this.composants[i].getPrix();
+        for (Composant comp : composants) {
+            total += comp.getPrix();
         }
 
         total =+ taxe;
@@ -31,9 +33,9 @@ public class Configuration {
     }
 
     public Composant rechercher(String categorie) {
-        for (int i = 0; i < 4; i++) {
-            if ( composants[0].equals(categorie) ) {
-                return composants[0];
+        for (Composant comp : composants) {
+            if ( comp.equals(categorie) ) {
+                return comp;
             }
         }
 
