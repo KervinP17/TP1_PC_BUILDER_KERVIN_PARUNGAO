@@ -7,19 +7,20 @@ public class Composant {
 
 
     public Composant(String categorie, String nom, String marque, double prix) {
-        this.categorie = categorie;
+        this.categorie = categorie.toUpperCase();
         this.nom = nom;
         this.marque = marque;
         this.prix = prix;
+        this.rabais = 0.0;
     }
 
 
     public Composant copier() {
-        Composant nouvComp = new Composant(categorie, nom, marque, prix);
+        Composant nouvComp = new Composant(this.categorie, this.nom, this.marque, this.prix);
         return nouvComp;
     }
 
-    // not really good
+    // not really good?
     public boolean estIdentique(Composant autre) {
         return this.categorie.equals(autre.categorie) && this.marque.equals(autre.marque) && this.nom.equals(autre.nom);
     }
