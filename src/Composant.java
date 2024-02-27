@@ -22,7 +22,9 @@ public class Composant {
 
     // not really good?
     public boolean estIdentique(Composant autre) {
-        return this.categorie.equals(autre.categorie) && this.marque.equals(autre.marque) && this.nom.equals(autre.nom);
+        return this.categorie.equals(autre.categorie)
+                && this.marque.equals(autre.marque)
+                && this.nom.equals(autre.nom);
     }
 
 
