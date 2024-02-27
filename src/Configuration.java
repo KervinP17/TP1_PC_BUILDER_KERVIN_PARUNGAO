@@ -43,7 +43,10 @@ public class Configuration {
         double total = 0.0;
 
         for (int i = 0; i < nbComposants; i++) {
-            total += composants[i].getPrix();
+            if (composants[i] != null) {
+                total += composants[i].getPrix();
+            }
+
         }
         total += (total * taxe);
 
@@ -85,7 +88,7 @@ public class Configuration {
 
     public boolean remplacer(Composant composant) {
         for ( int i = 0; i < nbComposants; i++ ) {
-            if (composants[i].getCategorie().replaceAll("\\s+", "").equalsIgnoreCase(composant.getCategorie().replaceAll("\\s+", ""))) {
+            if (composants[i].getCategorie().trim().equalsIgnoreCase(composant.getCategorie().trim())) {
                 System.out.println(composants[i] + "a été retiré de la configuration (total=" + composants[i].getPrix() + "$)");
                 System.out.println(composant + "a été ajouté de la configuration (total=" + composant.getPrix() + "$)");
 
