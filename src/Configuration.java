@@ -37,7 +37,6 @@ public class Configuration {
 //    copieP.maxPrix = originale.maxPrix;
 //    copieP.nbComposants = originale.nbComposants;
 //    copieP.composants = originale.composants;
-//}
 
 
     public double calculerTotal(double taxe) {

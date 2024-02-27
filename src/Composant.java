@@ -4,7 +4,7 @@ public class Composant {
     private String marque;
     private double prix;
     private double rabais;
-
+//
 
     public Composant(String categorie, String nom, String marque, double prix) {
         this.categorie = categorie.toUpperCase();
