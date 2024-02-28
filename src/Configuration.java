@@ -13,17 +13,19 @@ public class Configuration {
         this.nbComposants = composants.length;
         for (int i = 0; i < composants.length; i++) {
             this.composants[i] = composants[i];
+//            this.composants[i].getCategorie() = composants[i].getCategorie().trim();
         }
     }
 
+    //Ne marche pas (fait seulement une copie superficielle)
     public Configuration(Configuration originale) {
         this.description = originale.description;
         this.maxPrix = originale.maxPrix;
 
-        //this.composants = new Composant[originale.composants.length];
+        this.composants = new Composant[originale.composants.length];
         for (int i = 0; i < originale.composants.length; i++) {
-            if (this.composants != null) {
-                this.composants[i] = originale.composants[i].copier();
+            if (this.composants[i] != null) {
+                this.composants[i] = originale.composants[i];
 
             }
 
