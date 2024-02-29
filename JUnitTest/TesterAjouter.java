@@ -13,10 +13,10 @@ class TesterAjouter {
 
         assertTrue(configuration.ajouter(comp1));
     }
-
+    @Test
     void ajouterFonctionnePas() {
         Composant comp1 = new Composant("CPU", "AMD", "Ryzen 5 5600", 190);
-        Composant nouvComp = new Composant("CPU", "Intel", "Core i5-11600k");
+        Composant nouvComp = new Composant("CPU", "Intel", "Core i5-11600k", 220);
         configuration = new Configuration("Build AMD", 1250, new Composant[]{nouvComp});
 
         assertTrue(configuration.ajouter(comp1));
