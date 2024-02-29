@@ -1,7 +1,8 @@
 /* INSCRIVEZ VOTRE (OU VOS) PRÉNOM ET NOM CI-DESSOUS
-   1:
+   1: Kervin Parungao
    2:
    Adresse URL de votre dépôt GitHub:
+   https://github.com/KervinP17/TP1_PC_BUILDER_KERVIN_PARUNGAO
 NE MODIFIEZ PAS LE RESTE DE CE FICHIER
 (sauf si c'est pour mettre certaines sections en commentaire le temps de tester votre code)
 */
@@ -118,7 +119,7 @@ public class Main {
 
     }
     private static void afficherTotal(Configuration config) {
-        int nbComposants = config.getNbComposants();
+        int nbComposants =  config.getNbComposants();
         double totalAvecTvecTaxes = config.calculerTotal(0.15);
         System.out.printf("\tTotal: %d composants pour %.2f$ (taxes incluses)\n\n",
                 nbComposants, totalAvecTvecTaxes);
