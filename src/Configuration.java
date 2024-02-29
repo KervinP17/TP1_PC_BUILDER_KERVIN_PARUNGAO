@@ -11,9 +11,8 @@ public class Configuration {
         this.maxPrix = maxPrix;
         this.composants = new Composant[MAX_COMPOSANT];
         this.nbComposants = composants.length;
-        for (int i = 0; i < composants.length; i++) {
+        for ( int i = 0; i < composants.length; i++ ) {
             this.composants[i] = composants[i];
-//            this.composants[i].getCategorie() = composants[i].getCategorie().trim();
         }
     }
 
@@ -23,28 +22,19 @@ public class Configuration {
         this.maxPrix = originale.maxPrix;
 
         this.composants = new Composant[originale.composants.length];
-        for (int i = 0; i < originale.composants.length; i++) {
-            if (this.composants[i] != null) {
+        for ( int i = 0; i < originale.composants.length; i++ ) {
+            if ( this.composants[i] != null ) {
                 this.composants[i] = originale.composants[i];
-
             }
-
         }
         this.composants = originale.composants;
         this.nbComposants = originale.nbComposants;
     }
 
-//    Configuration copieP = new Configuration();
-//    copieP.description = originale.description;
-//    copieP.maxPrix = originale.maxPrix;
-//    copieP.nbComposants = originale.nbComposants;
-//    copieP.composants = originale.composants;
-
-
     public double calculerTotal(double taxe) {
         double total = 0.0;
 
-        for (int i = 0; i < nbComposants; i++) {
+        for ( int i = 0; i < nbComposants; i++ ) {
             if (composants[i] != null) {
                 total += composants[i].getPrix();
             }
@@ -66,7 +56,7 @@ public class Configuration {
     }
 
     public boolean ajouter(Composant composant) {
-        if (calculerTotal(0) + composant.getPrix() > maxPrix || rechercher(composant.getCategorie()) != null || nbComposants >= MAX_COMPOSANT) {
+        if ( calculerTotal(0) + composant.getPrix() > maxPrix || rechercher(composant.getCategorie()) != null || nbComposants >= MAX_COMPOSANT ) {
             return false;
         }
         composants[nbComposants++] = composant;
@@ -103,7 +93,7 @@ public class Configuration {
     public String toString() {
         String resultat;
         resultat = description + " (max " + maxPrix + ") :\n";
-        for (int i = 0; i < nbComposants; i++) {
+        for ( int i = 0; i < nbComposants; i++ ) {
             resultat = resultat + ( i + 1 ) + " : " + composants[i] + " (" + composants[i].getPrix() + ")\n";
             
         }
