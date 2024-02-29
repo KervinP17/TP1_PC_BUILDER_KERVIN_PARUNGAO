@@ -34,15 +34,14 @@ class TesterAjouter {
 
     @Test
     void fonctionnePasTropComp() {
-        Composant comp1 = new Composant("CPU", "AMD", "Ryzen 5 5600", 190);
-        for (int i = 0; i < 20; i++) {
-            comp1 = new Composant("CPU" + i, "AMD", "Ryzen 5 5600", 190);
-        }
+        configuration = new Configuration("Build AMD", 1250, new Composant[]{});
 
+        for (int i = 0; i < 20; i++) {
+            configuration.ajouter(new Composant("CPU" + i, "AMD", "Ryzen 5 5600", 190));
+        }
 
         Composant nouvComp = new Composant("CPU", "Intel", "Core i5-11600k", 220);
 
-        configuration = new Configuration("Build AMD", 1250, new Composant[]{comp1});
         Composant composant = new Composant("RAM", "GSkill", "Trident-Z DDR5 16GB", 90);
         assertFalse(configuration.ajouter(nouvComp));
     }
